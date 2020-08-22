@@ -1,0 +1,33 @@
+<div class="container text-center justify-content-center">
+   <div class="row">
+    <div class="col-md-12">
+            <h1 class="d-inline-block">User List</h1>
+            <button type="button" class="btn btn-primary btn-margin-left" (click)="addNewUser()">Create New User</button>
+    </div>
+   </div>
+    <div class="row" >
+        <div class="col-md-12 ">
+            <table class="table" *ngIf="userList">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of userList; let i = index">
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{user.firstname}}</td>
+                        <td>{{user.lastname}}</td>
+                        <td>
+                            <button class="btn btn-primary" type="button" (click)="updateUser(user)">Update</button>
+                            <button class="btn btn-primary ml-2" type="button" (click)="deleteUser(user)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
